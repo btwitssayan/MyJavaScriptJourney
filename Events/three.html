@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium at, atque, delectus amet assumenda culpa aperiam sit repudiandae iste itaque architecto ipsa quas libero magni unde excepturi sed et illum?
+    Praesentium eveniet pariatur sequi eum nisi ipsam harum dolorum omnis facere blanditiis soluta perferendis reprehenderit obcaecati maiores modi ratione fuga aspernatur, maxime reiciendis optio! Modi repellendus inventore et doloremque eum!
+    Aspernatur consequatur sequi iste repellendus voluptatem nulla, similique tempore adipisci unde vero molestiae alias totam dignissimos soluta distinctio pariatur voluptas illo itaque doloribus non aut id numquam. Nulla, aperiam quibusdam!</h1>
+    <button id = 'start'>Start</button>
+    <button id = 'stop'>Stop</button>
+</body>
+<script>
+ //   setInterval(function () {
+ //       console.log('I waited for 3 seconds')
+ //   },1000)
+
+
+//    const say = function (str) {
+  //      console.log(str,Date.now())
+    //}
+
+   // setInterval(say, 3000,'Sayan Golder')
+
+   let t = null
+
+   document.querySelector('#start').addEventListener('click', (e) => {
+        t = setInterval((str) => {
+           console.log(str)
+       }, 3000, 'Sayan Golder')
+   })
+
+   document.querySelector('#stop').addEventListener('click', (e) => {
+       clearInterval(t)
+       console.log('stop clicked')
+   })
+
+
+</script>
+</html>

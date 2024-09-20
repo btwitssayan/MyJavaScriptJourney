@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color:#212121; color:white ">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function createListItem(langname){
+        const listItem = document.createElement("li")
+        let textNode =document.createTextNode(langname)
+        listItem.appendChild(textNode)
+
+        document.querySelector(".language").appendChild(listItem)
+    }
+
+    createListItem("python")
+    createListItem("Java")
+
+    //edit
+
+    const secItem = document.querySelector("li:nth-child(2)")
+
+    const listItem = document.createElement("li")
+    let textNode =document.createTextNode(`MOJO`)
+    listItem.appendChild(textNode)
+
+    secItem.replaceWith(listItem)
+
+    //edit 
+    const flang = document.querySelector("li:first-child")
+    flang.outerHTML="<li>Typescript</li>"
+
+    //remove
+
+    const lastlang = document.querySelector("li:last-child")
+    lastlang.remove()
+
+
+
+
+</script>
+</html>

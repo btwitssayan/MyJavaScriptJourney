@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #414141;
+            color : aliceblue;
+        }
+        img {
+            width: 200px; /* Set width here */
+            height: 150px; /* Set height here */
+            object-fit: cover; /* Ensure the image maintains aspect ratio */
+            margin: 10px; /* Optional: add some space around the images */
+        }
+    </style>
+</head>
+<body>
+    <h1>Photos</h1>
+    <div>
+        <ul id = 'images'>
+            <li><img id='girl'src="pexels-musaortac-18986078.jpg" alt=""></li>
+            <li><img id='wall' src="pexels-nati-87264186-17815963.jpg" alt=""></li>
+            <li><img id='seaGirl'src="pexels-nina-hill-76946523-24247189.jpg" alt=""></li>
+            <li><img id='purpleTree' src="pexels-tizzy-24017562.jpg" ></li> <!--onclick="alert('purple')"-->
+            <li><img id = 'greenTree'src="pexels-xiao-bo-53084368-27008964.jpg" alt=""></li>
+            <li><a id = 'googleLink'style="color: aliceblue;" href="https://www.google.com/">Google.com</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    //document.getElementById('purpleTree').onclick = function (){
+    //    alert('purple')
+   // } // Not a very good way to do it
+
+    //type, timestamp, defaultPrevented
+    //target, toElement, srcElement, current Target,
+    //clientX, client Y, screenX, screenY
+    //altkey, ctrlkey, shiftkey, keyCode
+ 
+   //document.querySelector('#purpleTree').addEventListener('click', (e) => {
+    //   console.log(e)   //return the event object
+   // //   console.log(e.target) // return the elemtent that triggered the event
+      // alert('purple')
+   //})
+
+   ////attachEvent() used for older browsers
+   //on() used in jQuery
+
+   //document.getElementById('images').addEventListener('click', (e) => {
+   //    console.log('images clicked')
+  // },) //true -> capture phase //false -> bubbling phase
+//
+   //document.getElementById('girl').addEventListener('click', (e) => {
+   //    console.log('girl clicked')   
+      // e.stopPropagation()
+   //})
+
+   //document.getElementById('googleLink').addEventListener('click', (e) => {
+   //    e.preventDefault()
+    //   e.stopPropagation()
+    //   console.log('google link clicked')
+   //}) 
+
+   document.querySelector('#images').addEventListener('click', (e) => {
+       //let removeImage = e.target.parentNode
+      // removeImage.remove() //this will work in older browsers
+
+      // removeImage.parentNode.removeChild(removeImage) //this will not work in older browsers
+        let removeImage = e.target.tagName
+        if (removeImage === 'IMG'){
+            e.target.parentNode.remove()
+        }
+
+   })
+</script>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai Aur Code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+   // setTimeout(function () {
+    //    console.log('I waited for 3 seconds')
+    //}, 3000)// in miliseconds
+
+  //  const say = function () {
+    //    console.log('I waited for 3 seconds')
+   // }
+
+   // setTimeout(say, 3000) // Handler take the reference of the function
+
+   //change h1 text after 5 sec
+
+   const changeh1 = function (){
+        document.querySelector('h1').innerText = 'Chai will be finish in 5 sec'
+   }
+
+   const t = setTimeout(changeh1,5000)
+
+   document.querySelector('#stop').addEventListener('click',(e) => {
+    clearTimeout(t)
+    console.log('stop clicked')
+   })
+</script>
+</html>

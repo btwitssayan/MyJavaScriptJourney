@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+</head>
+<body>
+    <button>click</button>
+</body>
+<script>
+    // Define a class named React
+class React {
+    // Constructor method is called when a new instance is created
+    constructor() {
+        // Initialize properties of the instance
+        this.library = "React"; // Property to store the name of the library
+        this.server = '127.0.0.1'; // Property to store server address
+
+        // Set up an event listener for the button click
+        document
+            .querySelector('button') // Select the button element from the document
+            .addEventListener('click', this.melog.bind(this)); // Bind the melog method to the instance and add it as a click event handler
+    }
+
+    // Method to handle button clicks
+    melog() {
+        console.log('button clicked'); // Log a message indicating the button was clicked
+        console.log(this.library); // Log the library name (i.e., "React") to the console
+    }
+}
+
+// Create a new instance of the React class
+const app = new React();
+
+</script>
+</html>
